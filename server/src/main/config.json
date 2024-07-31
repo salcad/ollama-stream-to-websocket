@@ -1,0 +1,5 @@
+{
+    "ollamaAPIUrl": "http://localhost:11434/api/generate",
+    "allowedOrigin": "http://localhost:3000"
+}
+  
