@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ollama</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Ollama Chat</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+        
+            <div class="input-field">
+                <input type="text" id="model" name="model" value="llama3.1" class="validate">
+                <label for="model" class="active">Model</label>
+            </div>
+            <div class="input-field">
+                <textarea id="prompt" name="prompt" class="materialize-textarea">Why is there something rather than nothing?</textarea>
+                <label for="prompt" class="active">Prompt</label>
+            </div>
+            <button id="sendButton" class="btn waves-effect waves-light btn-custom" onclick="sendPostRequest()">Send prompt</button>
+            <div id="output" class="card-panel grey lighten-3"></div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+            <div class="container">
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
