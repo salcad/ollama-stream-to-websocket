@@ -68,26 +68,3 @@ function sendPostRequest() {
       });
 }
 
-function sendPostRequest() {
-    startWebSocket(); 
-
-    document.getElementById("output").innerHTML = "";
-
-    document.getElementById("sendButton").disabled = true;
-
-    const model = document.getElementById("model").value;
-    const prompt = document.getElementById("prompt").value;
-    const data = { model, prompt };
-
-    fetch('http://localhost:8080/post', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }).then(response => response.text())
-      .then(data => {
-          console.log(data);
-      });
-}
-
