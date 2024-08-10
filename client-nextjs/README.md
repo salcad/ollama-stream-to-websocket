@@ -34,19 +34,19 @@ cd ollama-stream-to-websocket/client-nextjs
     NEXT_PUBLIC_POST_URL=http://localhost:8080/post
     ```
 
-2. Run the development server
+2. Run the development server.
 
     ```bash
     npm run dev
     ```
 
-3. Run test
+3. Run test.
 
     ```bash
     npm test
     ```
 
-4. To build and run the project in production mode:
+4. To build and run the project in production mode.
 
     ```bash
     npm run build
