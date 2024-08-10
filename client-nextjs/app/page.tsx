@@ -3,6 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { createCustomMarked } from './createCustomMarked';
 
+const WEBSOCKET_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL || "ws://localhost:8080/ws";
+const POST_URL = process.env.NEXT_PUBLIC_POST_URL || "http://localhost:8080/post";
+
 export default function Home() {
   const [model, setModel] = useState('llama3.1');
   const [prompt, setPrompt] = useState('Why is there something rather than nothing?');
@@ -23,16 +26,14 @@ export default function Home() {
 
   const startWebSocket = () => {
     if (!ws.current || ws.current.readyState === WebSocket.CLOSED) {
-      ws.current = new WebSocket('ws://localhost:8080/ws');
+      ws.current = new WebSocket(WEBSOCKET_URL);
       ws.current.onmessage = function (event) {
         if (event.data === EOT) {
           markdownContent = '';
           setLoading(false);
         } else {
           markdownContent += event.data;
-          console.log(markdownContent);
           setOutput(marked(markdownContent) as string);
-          console.log(marked(markdownContent));
         }
       };
       ws.current.onclose = function () {
@@ -50,7 +51,7 @@ export default function Home() {
     const data = { model, prompt };
 
     try {
-      const response = await fetch('http://localhost:8080/post', {
+      const response = await fetch(POST_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
