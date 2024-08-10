@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Demo UI Chat to LLM
+
+This is a simple web application that allows users to interact with a Large Language Model (LLM) via a chat interface. 
+
+## Features
+
+- Real-time chat interface with LLM
+- Markdown support with syntax highlighting for code blocks
+- Responsive design using Materialize CSS
+
+## Installation
+
+## Prerequisites
+
+- Node.js (v20.11 or higher)
+- npm (v10.2.4 or higher)
+
+### Clone the repository:
+
+```bash
+git clone https://github.com/salcad/ollama-stream-to-websocket.git
+cd cd ollama-stream-to-websocket/client-nextjs
+```
+
+## [Next.js](https://nextjs.org/) 
+#### Project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
